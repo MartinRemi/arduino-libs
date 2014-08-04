@@ -5,4 +5,5 @@ Bundle of arduino libs :
 - Buzzer
 
 ## Credits
+Rémi MARTIN
 Maxime BRETAGNON
