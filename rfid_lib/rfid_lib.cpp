@@ -17,27 +17,27 @@ void RFID::readSerial(String &ReadTagString)
   char code[10];
   String TagCode="";
 
-  if(rfid.available() > 0) {          // If data available from reader 
-    if((val = rfid.read()) == 10) {   // Check for header 
+  if(rfid.available() > 0) {
+    if((val = rfid.read()) == 10) {
       bytesread = 0; 
-      while(bytesread<10) {                 // Read 10 digit code 
+      while(bytesread<10) { 
         if( rfid.available() > 0) { 
           val = rfid.read(); 
-          if((val == 10)||(val == 13)) {   // If header or stop bytes before the 10 digit reading 
-            break;                         // Stop reading 
+          if((val == 10)||(val == 13)) { 
+            break;
           } 
-          code[bytesread] = val;           // Add the digit           
-          bytesread++;                     // Ready to read next digit  
+          code[bytesread] = val;      
+          bytesread++;
         } 
       } 
-      if(bytesread == 10) {                // If 10 digit read is complete 
+      if(bytesread == 10) {      
 
-        for(int x=0;x<10;x++)              //Copy the Chars to a String
+        for(int x=0;x<10;x++)    
         {
           TagCode += code[x];
         }
-        ReadTagString = TagCode;          //Update the caller
-        while(rfid.available() > 0) //Burn off any characters still in the buffer
+        ReadTagString = TagCode; 
+        while(rfid.available() > 0)
         {
           rfid.read();
         }

@@ -14,13 +14,11 @@ void Buzzer::melodyTone(int notes[], int durations[], int arraySize) {
 }
 
 void Buzzer::noteTone(int note, int duration) {
-    duration = 1000/duration; // Note duration
-    tone(pinNode, note, duration); // We play the note
+    duration = 1000/duration;
+    tone(pinNode, note, duration);
     
-    // Pause between notes
     int pauseBetweenNotes = duration * 1.30;
     delay(pauseBetweenNotes);
     
-    // We stop the note playing
     noTone(pinNode);
 }

@@ -6,7 +6,6 @@ RGBLed::RGBLed(int RedPin, int GreenPin, int BluePin) :
 	greenPin(GreenPin),
 	bluePin(BluePin)
 	{
-		// The three pins of rgb led, used for OUTPUT
 		pinMode(redPin, OUTPUT);
 		pinMode(greenPin, OUTPUT);
 		pinMode(bluePin, OUTPUT);
