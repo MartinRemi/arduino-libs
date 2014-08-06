@@ -4,6 +4,8 @@ Bundle of arduino libs :
 - RGB led
 - Buzzer
 
+Works fine with arduino UNO. No tested for other version.
+
 ## Credits
 Rémi MARTIN
 Maxime BRETAGNON
